@@ -30,8 +30,9 @@ public class PalindromeImpl implements PalindromeApi {
             if (user.getWords().contains(word)) {
                 return new Result(WORD_ALREADY_USED, 0);
             }
-            User updatedUser = new User(user.getId(), user.getScore() + points, addNewWord(user.getWords(), word));
-            userRepository.save(updatedUser);
+            user.setScore(user.getScore() + points);
+            user.setWords(addNewWord(user.getWords(), word));
+            userRepository.save(user);
             return new Result(OK, points);
         }
         return new Result(IS_NOT_PALINDROME, 0);

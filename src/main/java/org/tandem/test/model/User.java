@@ -3,9 +3,9 @@ package org.tandem.test.model;
 import java.util.HashSet;
 
 public class User {
-    private final long id;
-    private final int score;
-    private final HashSet<String> words;
+    private long id;
+    private int score;
+    private HashSet<String> words;
 
     public User(long id, int score, HashSet<String> words) {
         this.id = id;
@@ -23,5 +23,17 @@ public class User {
 
     public HashSet<String> getWords() {
         return words;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public void setWords(HashSet<String> words) {
+        this.words = words;
     }
 }
